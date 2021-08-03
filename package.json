@@ -1,0 +1,23 @@
+{
+  "name": "testv19",
+  "version": "0.1.9",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yomua/test-packages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yomua/test-packages/issues"
+  },
+  "homepage": "https://github.com/yomua/test-packages#readme",
+  "publishConfig": {
+    "@yomua:registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {}
+}
