@@ -17,7 +17,15 @@ async function request(
   options: AxiosRequestConfig,
   errorHandler?: ErrorHandler
 ) {
-  return axios(url, options)
+  const reqOptions: AxiosRequestConfig = {
+    ...options,
+    headers: {
+      "X-Database": "nfo_aircarbon",
+      "Content-Type": "application/json",
+      ...options.headers,
+    }
+  }
+  return axios(url, reqOptions)
     .then(checkStatus)
     .then((response: AxiosResponse) => ({ data: response.data }))
     .catch(() => {
