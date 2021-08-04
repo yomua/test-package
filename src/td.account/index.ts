@@ -12,12 +12,12 @@ type IParams = {
 
 // options not require, should set default value in request.ts 
 
-const getCryptoAddress = (params: IParams) => {
+const getCryptoAddress = async (params: IParams) => {
   const { token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzMDI3NmUwMGQ4ODA3MjkxM2I0NTIiLCJkYiI6Im5mb19haXJjYXJib24iLCJpYXQiOjE2MjgwNTc5MTl9.h3aQwXhgNLHNzRpCYCIJum-kyAXMXAAFK0rYjCgb3MM', user_id = 's0276e00d88072913b452' } = params
   const defaultOptions = {
     method: 'POST',
     data: {
-      "id": 1628057922167,
+      "id": 1621928822080,
       "method": "execute",
       "params": [
         "td.account",
@@ -41,7 +41,7 @@ const getCryptoAddress = (params: IParams) => {
     },
   }
   const { url, options = defaultOptions, errorHandler } = params
-  const data = request(url, options, errorHandler)
+  const data = await request(url, options, errorHandler)
   return data
 }
 
