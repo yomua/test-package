@@ -17,7 +17,7 @@ const getCryptoAddress = async (params: IParams) => {
   const defaultOptions = {
     method: 'POST',
     data: {
-      "id": 1621928822080,
+      "id": Date.now(),
       "method": "execute",
       "params": [
         "td.account",
