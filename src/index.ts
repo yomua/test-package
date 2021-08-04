@@ -1,10 +1,12 @@
 export * from './lib/number';
 import { getCryptoAddress } from "./td.account";
+import { notif } from "./notif/notif";
 import { ErrorHandler } from "./index.d";
 
 function HydraxSDK(url: string, token: string, user_id: string) {
   return {
-    getCryptoAddress: (options?, errorHandler?: ErrorHandler) => getCryptoAddress({ url, token, user_id, options, errorHandler })
+    getCryptoAddress: (options?: any, errorHandler?: ErrorHandler) => getCryptoAddress({ url, token, user_id, options, errorHandler }),
+    getnotif: () => notif(url, token, user_id)
   };
 }
 
