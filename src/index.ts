@@ -1,12 +1,10 @@
 export * from './lib/number';
-import { queryPair } from "./pair";
-import { SDKConfig, ErrorHandler, OtherParams } from "./index.d";
-import request from "./utils/request";
-
+import { getCryptoAddress } from "./td.account";
+import { ErrorHandler } from "./index.d";
 
 function HydraxSDK(url: string, token: string, user_id: string) {
   return {
-    queryPair: queryPair,
+    getCryptoAddress: (options?, errorHandler?: ErrorHandler) => getCryptoAddress({ url, token, user_id, options, errorHandler })
   };
 }
 
