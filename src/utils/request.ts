@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 function checkStatus(response: AxiosResponse) {
   if (response.status >= 200 && response.status < 300) {
@@ -20,11 +20,11 @@ async function request(
   return axios(url, options)
     .then(checkStatus)
     .then((response: AxiosResponse) => ({ data: response.data }))
-    .catch((error) => {
+    .catch(() => {
       errorHandler && errorHandler();
       return {
         data: {
-          message: "Error",
+          message: 'Error',
           status: 500,
         },
       };
