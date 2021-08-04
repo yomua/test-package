@@ -105,5 +105,6 @@
     "exclude": [
       "**/*.spec.js"
     ]
-  }
+  },
+  "type": "module"
 }
