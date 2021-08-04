@@ -1,5 +1,5 @@
 {
-  "name": "ts-demo",
+  "name": "hydrax-sdk-demo",
   "version": "1.0.0",
   "description": "ts demo",
   "main": "build/main/index.js",
@@ -8,6 +8,9 @@
   "repository": "https://github.com/YOUR_GITHUB_USER_NAME/ts-demo",
   "license": "MIT",
   "keywords": [],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@sky1458"
+  },
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
@@ -41,7 +44,9 @@
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
