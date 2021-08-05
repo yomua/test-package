@@ -10,7 +10,7 @@ const getCryptoAddress = async (
 ) => {
   const { token = '', user_id = '', url = '', } = sdkConfig;
   // setSDKConfig(sdkConfig);
-  const config = getSDKConfig()
+  // const config = getSDKConfig()
 
   const opt: AxiosRequestConfig = {
     method: 'POST',
