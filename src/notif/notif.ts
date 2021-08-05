@@ -1,8 +1,10 @@
+import { ErrorHandler, SDKConfig } from '../index.d';
 import { AxiosRequestConfig } from 'axios';
-
 import request from "../utils/request";
 
-export async function notif(url: string, token:unknown, user_id: string) {
+
+export async function notif( options?: SDKConfig,errorHandler?: ErrorHandler) {
+  const { token,user_id,url} = options;
   const cond = [['user_id', '=', user_id]];
   const fields = ['time', 'title', 'state', 'data'];
   const params = [
@@ -16,7 +18,7 @@ export async function notif(url: string, token:unknown, user_id: string) {
     }
   ];
   
-  const options:AxiosRequestConfig = {
+  const optionsData:AxiosRequestConfig = {
     data:{
       id: new Date().getTime(),
       method: 'execute',
@@ -24,7 +26,7 @@ export async function notif(url: string, token:unknown, user_id: string) {
     }
   }
   
-  const response = await request(url, options);
+  const response = await request(url, optionsData, errorHandler);
 
   return response;
 }
