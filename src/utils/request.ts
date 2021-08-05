@@ -20,11 +20,12 @@ async function request(
   const reqOptions: AxiosRequestConfig = {
     ...options,
     headers: {
-      "X-Database": "nfo_aircarbon",
-      "Content-Type": "application/json",
+      'X-Database': 'nfo_aircarbon',
+      'Content-Type': 'application/json',
       ...options.headers,
-    }
-  }
+    },
+    method: options.method || 'post',
+  };
   return axios(url, reqOptions)
     .then(checkStatus)
     .then((response: AxiosResponse) => ({ data: response.data }))
