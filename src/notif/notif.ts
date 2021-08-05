@@ -13,11 +13,11 @@ export async function notif(url: string, _:unknown, user_id: string) {
   ];
   
   const options:AxiosRequestConfig = {
-    params:JSON.stringify({
+    data:{
       id: new Date().getTime(),
       method: 'execute',
       params,
-    })
+    }
   }
   
   const response = await request(url, options);
