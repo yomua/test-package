@@ -1,20 +1,11 @@
 import request from '../utils/request';
-import { AxiosRequestConfig } from 'axios';
-interface SDKConfig extends AxiosRequestConfig {
-  baseUrl?: string;
-  user_id?: string;
-  token?: string;
-  company_id?: string;
-  database?: string;
-  usePublic?: boolean;
-  url?: string;
-}
-
- const getCryptoAddress = async (
-  options?: SDKConfig,
-  errorHandler?: ErrorHandler
+import { AxiosRequestConfig } from "axios";
+const getCryptoAddress = async (
+  sdkConfig: SDKConfig,
+  _: AxiosRequestConfig,
+  errorHandler: ErrorHandler
 ) => {
-  const { token = '', user_id = '', url = '', } = options;
+  const { token = '', user_id = '', url = '', } = sdkConfig;
   const opt = {
     method: 'POST',
     data: {
@@ -32,9 +23,9 @@ interface SDKConfig extends AxiosRequestConfig {
       ],
     },
   };
-  const data = await request(url, opt, errorHandler);
+  const data = await request(url, (opt as AxiosRequestConfig), errorHandler);
   return data;
 };
 
 
-export {getCryptoAddress}
+export { getCryptoAddress }

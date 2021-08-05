@@ -8,7 +8,7 @@ function checkStatus(response: AxiosResponse) {
   throw error;
 }
 
-async function request(
+function request(
   url: string,
   options: AxiosRequestConfig,
   errorHandler?: ErrorHandler
