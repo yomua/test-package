@@ -1,5 +1,5 @@
 import request from '../utils/request';
-
+import { AxiosRequestConfig } from 'axios';
 // options not require, should set default value in request.ts
 interface SDKConfig extends AxiosRequestConfig {
   baseUrl?: string;
