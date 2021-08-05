@@ -1,5 +1,5 @@
-import { ErrorHandler, SDKConfig } from '../index.d';
 import { AxiosRequestConfig } from 'axios';
+import { ErrorHandler, SDKConfig } from '../index.d';
 import request from "../utils/request";
 
 

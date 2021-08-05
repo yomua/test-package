@@ -1,6 +1,5 @@
 import { ErrorHandler, SDKConfig } from '../index.d';
 import request from '../utils/request';
-import { AxiosRequestConfig } from 'axios';
 
 // options not require, should set default value in request.ts
 
