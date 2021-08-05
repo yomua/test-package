@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { ErrorHandler } from '../index.d';
 
 function checkStatus(response: AxiosResponse) {
   if (response.status >= 200 && response.status < 300) {

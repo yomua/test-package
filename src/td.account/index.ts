@@ -1,8 +1,15 @@
-import { ErrorHandler, SDKConfig } from '../index.d';
 import request from '../utils/request';
 import { AxiosRequestConfig } from 'axios';
 
 // options not require, should set default value in request.ts
+interface SDKConfig extends AxiosRequestConfig {
+  baseUrl?: string;
+  user_id?: string;
+  token?: string;
+  company_id?: string;
+  database?: string;
+  usePublic?: boolean;
+}
 
 export const getCryptoAddress = async (
   options?: SDKConfig,

@@ -1,4 +1,3 @@
-import { ErrorHandler } from './index.d';
 import { notif } from './notif/notif';
 import { getCryptoAddress } from './td.account';
 import { AxiosRequestConfig } from 'axios';
