@@ -14,7 +14,10 @@ function HydraxSDK(url: string, token: string, user_id: string) {
       options?: AxiosRequestConfig,
       errorHandler: ErrorHandler = () => null
     ) => getCryptoAddress({ ...options, ...commonOption }, errorHandler),
-    getnotif: () => notif(url, token, user_id),
+    getnotif: (
+      options?: AxiosRequestConfig,
+      errorHandler: ErrorHandler = () => null
+    ) => notif({ ...options, ...commonOption }, errorHandler),
   };
 }
 
