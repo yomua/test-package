@@ -19,7 +19,7 @@ function HydraxSDK(sdkConfig: SDKConfig) {
       errorHandler: ErrorHandler = () => null
     ) => notif(sdkConfig, options, errorHandler),
 
-    
+    test: () => test()
   };
 }
 
