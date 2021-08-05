@@ -1,12 +1,18 @@
 import request from '../utils/request';
 import { AxiosRequestConfig } from "axios";
+
+import { getSDKConfig } from "../utils/setSDKConfig";
+
 const getCryptoAddress = async (
   sdkConfig: SDKConfig,
   _: AxiosRequestConfig,
   errorHandler: ErrorHandler
 ) => {
   const { token = '', user_id = '', url = '', } = sdkConfig;
-  const opt = {
+  // setSDKConfig(sdkConfig);
+  const config = getSDKConfig()
+
+  const opt: AxiosRequestConfig = {
     method: 'POST',
     data: {
       id: Date.now(),
@@ -23,9 +29,12 @@ const getCryptoAddress = async (
       ],
     },
   };
-  const data = await request(url, (opt as AxiosRequestConfig), errorHandler);
+  const data = await request(url, opt, errorHandler);
   return data;
 };
 
+// const getBalances = user_id => rpc_execute('td.account', 'get_balances', [], { user_id })
 
-export { getCryptoAddress }
+const test = () => getSDKConfig()
+
+export { getCryptoAddress, test }
